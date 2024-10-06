@@ -6,52 +6,54 @@ import java.util.Scanner;
  * To get a response from the user, use the getUserQuestion() method at the bottom of this file
  */
 public class Magic8Ball {
-
     // 1. Make a main method that includes all the steps below
+    public static void main(String[] args) {
+        // 2. Ask the user to enter a question for the magic 8-ball
+        System.out.println("Ask the Magic 8 Ball a yes or no question: ");
 
-    // 2. Ask the user to enter a question for the magic 8-ball
+        // 3. Call the getUserQuestion() method to get a question from the user
+        String userQuestion = getUserQuestion();
 
+        // 4. Make a variable and initialize it to a random number
+        // Generate random number between 0 and 3
+        int randomNumber = new Random().nextInt(4);
 
-    // 3. Call the getUserQuestion() method to get a question from the user
-    //    String userQuestion = getUserQuestion();
+        // 5. If the random number is 0
+        if (randomNumber == 0) {
+            // Tell the user "Yes"
+            System.out.println("Yes");
+        }
 
+        // 6. If the random number is 1
+        if (randomNumber == 1) {
+            // Tell the user "No"
+            System.out.println("No");
+        }
 
-    // 4. Make a variable and initialize it to a random number
-    //
-    //    // Get random a number from: [0, 1, 2, 3]
-    //    int randNumber = new Random().nextInt(4);
+        // 7. If the random number is 2
+        if (randomNumber == 2) {
+            // Tell the user a custom response
+            System.out.println("Ask again later");
+        }
 
-
-    // 5. If the random number is 0
-
-        // Tell the user "Yes"
-
-
-    // 6. If the random number is 1
-
-        // Tell the user "No"
-
-
-    // 7. If the random number is 2
-
-        // Tell the user a custom response
-
-
-    // 8. If the random number is 3
-
-        // Tell the user a custom response
-
-
+        // 8. If the random number is 3
+        if (randomNumber == 3) {
+            // Tell the user a custom response
+            System.out.println("Definitely maybe");
+        }
+    }
     /**
      * @return The user's response as a String
      */
     public static String getUserQuestion(){
-        Scanner scanner = new Scanner(System.in);
-        String question = scanner.nextLine();
-        return question;
+        // Create a scanner
+        Scanner userInput = new Scanner(System.in);
+        // Prompts user to ask a yes or no question
+        System.out.println("Enter your question ");
+        // Read the question from user as String and return it
+        return userInput.nextLine();
     }
 }
-
 
 
 
